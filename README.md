@@ -9,6 +9,10 @@ Weather app built using Nextjs, Tailwind CSS and Typescript
 
 ## Resources used:
 
+https://www.youtube.com/watch?v=KkC_wYM_Co4
+
+original repo -> https://github.com/whoisseth/weather-app-nextjs
+
 https://nextjs.org/
 
 https://www.toptal.com/developers/gitignore/
