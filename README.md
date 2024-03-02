@@ -11,3 +11,4 @@ Weather app built using Nextjs, Tailwind CSS and Typescript
 
 https://nextjs.org/
 
+https://www.toptal.com/developers/gitignore/
