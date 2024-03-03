@@ -16,3 +16,5 @@ original repo -> https://github.com/whoisseth/weather-app-nextjs
 https://nextjs.org/
 
 https://www.toptal.com/developers/gitignore/
+
+https://react-icons.github.io/react-icons/search/#q=mdwb

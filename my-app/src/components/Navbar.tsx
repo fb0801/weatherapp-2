@@ -13,7 +13,7 @@ export default function Navbar({}: Props) {
             <MdWbSunny className="text-3xl mt-1 text-yellow-300" />
           </p>
           {/*  */}
-          <section>
+          <section className='flex gap-2 items-center'>
 
 
           </section>
