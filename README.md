@@ -18,3 +18,5 @@ https://nextjs.org/
 https://www.toptal.com/developers/gitignore/
 
 https://react-icons.github.io/react-icons/search/#q=mdwb
+
+https://openweathermap.org/
