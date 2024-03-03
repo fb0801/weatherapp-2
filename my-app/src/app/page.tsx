@@ -6,6 +6,7 @@ import Image from "next/image";
 import { useQuery } from "react-query";
 
 import axios from "axios";
+import { parseISO } from "date-fns";
 
 //https://api.openweathermap.org/data/2.5/forecast?q=${place}&appid=${process.env.NEXT_PUBLIC_WEATHER_KEY}&cnt=56
 
@@ -96,7 +97,10 @@ if (isLoading) return (
         {/*data today*/}
         <section>
           <div>
-          <h2 className="flex gap-1 text 2xl items-end"></h2>
+          <h2 className="flex gap-1 text 2xl items-end">
+          <p>{format(parseISO(firstData?.dt_txt ?? ""), 'EEEE')}</p>
+          <p className="text-lg">({format(parseISO(firstData?.dt_txt ?? ""), 'dd.MM.yyyy')})</p>
+          </h2>
           <div></div>
           </div>
         </section>
