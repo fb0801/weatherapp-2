@@ -7,6 +7,7 @@ import { useQuery } from "react-query";
 
 import axios from "axios";
 import { parseISO } from "date-fns";
+import Container from "@/components/Container";
 
 //https://api.openweathermap.org/data/2.5/forecast?q=${place}&appid=${process.env.NEXT_PUBLIC_WEATHER_KEY}&cnt=56
 
@@ -101,7 +102,9 @@ if (isLoading) return (
           <p>{format(parseISO(firstData?.dt_txt ?? ""), 'EEEE')}</p>
           <p className="text-lg">({format(parseISO(firstData?.dt_txt ?? ""), 'dd.MM.yyyy')})</p>
           </h2>
-          <div></div>
+          <Container className="gap-10 px-6 items-center">
+            <div></div>
+          </Container>
           </div>
         </section>
         
