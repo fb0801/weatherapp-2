@@ -1,5 +1,8 @@
 import React from 'react'
 import { MdWbSunny } from "react-icons/md";
+import { MdMyLocation } from "react-icons/md";
+import { MdOutlineLocationOn } from "react-icons/md";
+import Searchbox from './Searchbox';
 
 type Props = {}
 
@@ -13,9 +16,13 @@ export default function Navbar({}: Props) {
             <MdWbSunny className="text-3xl mt-1 text-yellow-300" />
           </p>
           {/*  */}
-          <section>
+          <section className='flex gap-2 items-center'>
+          <MdOutlineLocationOn className="text-3xl" />
+          <MdMyLocation className="text-2xl text-gray-400 hover:opacity-80 cursor-pointer"/>
+          <p className='text-slate-900/80 text-sm'></p>
+          <div>{/*searchbox*/}</div>
 
-
+          <Searchbox />
           </section>
         </div>
         </nav>
