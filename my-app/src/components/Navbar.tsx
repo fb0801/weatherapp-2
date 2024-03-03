@@ -2,6 +2,7 @@ import React from 'react'
 import { MdWbSunny } from "react-icons/md";
 import { MdMyLocation } from "react-icons/md";
 import { MdOutlineLocationOn } from "react-icons/md";
+import Searchbox from './Searchbox';
 
 type Props = {}
 
@@ -21,6 +22,7 @@ export default function Navbar({}: Props) {
           <p className='text-slate-900/80 text-sm'></p>
           <div>{/*searchbox*/}</div>
 
+          <Searchbox />
           </section>
         </div>
         </nav>
