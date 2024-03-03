@@ -8,6 +8,7 @@ import { useQuery } from "react-query";
 import axios from "axios";
 import { parseISO } from "date-fns";
 import Container from "@/components/Container";
+import { convertKelvinToCelsius } from "@/utils/convertKelvinToCelsius";
 
 //https://api.openweathermap.org/data/2.5/forecast?q=${place}&appid=${process.env.NEXT_PUBLIC_WEATHER_KEY}&cnt=56
 
@@ -96,14 +97,43 @@ if (isLoading) return (
       <Navbar />
       <main className="px-3 max-w-7xl mx-auto flex flex-col gap-9 w-full pb-10 pt-4">
         {/*data today*/}
-        <section>
-          <div>
+        <section className="space-y-4">
+          <div className="space-y-2">
           <h2 className="flex gap-1 text 2xl items-end">
           <p>{format(parseISO(firstData?.dt_txt ?? ""), 'EEEE')}</p>
           <p className="text-lg">({format(parseISO(firstData?.dt_txt ?? ""), 'dd.MM.yyyy')})</p>
           </h2>
           <Container className="gap-10 px-6 items-center">
-            <div></div>
+            {/*temp*/}
+            <div className="flex flex-col px-4">
+            </div>
+              {/* time and weather */}
+              <span className="text-5xl">
+
+              {convertKelvinToCelsius (firstData?.main.temp ?? 296.77)}
+
+              </span>
+              <p className="text-xs space-x-1 whitespace-nowrap">
+                </p>
+                <p className="text-xs space-x-2">
+                  <span>
+                {convertKelvinToCelsius (firstData?.main.temp_min ?? 0)}
+                {" "}
+                  </span>
+                <span>
+                {""}
+                {convertKelvinToCelsius (firstData?.main.temp_max ?? 0)}
+
+                </span>
+                
+              </p>
+              <div className="flex gap-10 sm:gap-16 overflow-x-auto w-full justify-between pr-3">
+                {data?.list.map((d,i) => ( 
+                <div key={i} className="flex flex-col justify-between gap-2 items-center text-xs font-semibold">
+
+                </div>
+                ))}
+              </div>
           </Container>
           </div>
         </section>
