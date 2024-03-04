@@ -11,6 +11,8 @@ import Container from "@/components/Container";
 import { convertKelvinToCelsius } from "@/utils/convertKelvinToCelsius";
 import WeatherIcon from "@/components/WeatherIcon";
 import { getDayOrNightIcon } from "@/utils/getDayOrNightIcon";
+import WeatherDetails from "@/components/WeatherDetails";
+import { metersToKilometers } from "@/utils/metersToKilometers";
 
 //https://api.openweathermap.org/data/2.5/forecast?q=${place}&appid=${process.env.NEXT_PUBLIC_WEATHER_KEY}&cnt=56
 
@@ -152,7 +154,12 @@ if (isLoading) return (
                     firstData?.dt_txt ?? "")} />
 
                   </Container>
-                  <Container className="bg-yellow-300/80 px-6 gap-4 justify-between overflow-x-auto"></Container>
+                  <Container className="bg-yellow-300/80 px-6 gap-4 justify-between overflow-x-auto">
+                    <WeatherDetails visability={metersToKilometers(firstData?.visibility ?? 10000)} 
+                    airPressure={`${firstData?.main.pressure}hPa`}
+                    humidity={`${firstData?.main.humidity}%`}
+                    />
+                  </Container>
           {}
           </div>
         </section>
