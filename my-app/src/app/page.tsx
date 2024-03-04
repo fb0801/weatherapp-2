@@ -9,6 +9,7 @@ import axios from "axios";
 import { parseISO } from "date-fns";
 import Container from "@/components/Container";
 import { convertKelvinToCelsius } from "@/utils/convertKelvinToCelsius";
+import WeatherIcon from "@/components/WeatherIcon";
 
 //https://api.openweathermap.org/data/2.5/forecast?q=${place}&appid=${process.env.NEXT_PUBLIC_WEATHER_KEY}&cnt=56
 
@@ -85,7 +86,8 @@ export default function Home() {
   )*/
 )
 
-const firstData = data?.list[]
+const firstData = data?.list[0];
+
 
 if (isLoading) return (
 <div className="flex items-center min-h-screen justify-center">
@@ -132,6 +134,7 @@ if (isLoading) return (
                 <div key={i} className="flex flex-col justify-between gap-2 items-center text-xs font-semibold">
                   <p className="whitespace-nowrap">{format(parseISO(d.dt_txt), "h:mm a")}</p>
 
+                    <WeatherIcon iconName={d.weather[0].icon} />
 
                   <p>{convertKelvinToCelsius( d?.main.temp ?? 0)}</p>
                 </div>
