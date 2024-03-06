@@ -4,7 +4,7 @@
 import React from "react";
 import { MdOutlineLocationOn, MdWbSunny } from "react-icons/md";
 import { MdMyLocation } from "react-icons/md";
-import SearchBox from "./SearchBox";
+import Searchbox from './Searchbox';
 import { useState } from "react";
 import axios from "axios";
 import { loadingCityAtom, placeAtom } from "@/app/atom";
