@@ -24,3 +24,5 @@ https://openweathermap.org/
 https://tanstack.com/query/v3/docs/framework/react/overview
 
 https://www.npmjs.com/package/date-fns
+
+https://jotai.org/
