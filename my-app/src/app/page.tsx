@@ -6,7 +6,7 @@ import Image from "next/image";
 import { useQuery } from "react-query";
 
 import axios from "axios";
-import { parseISO } from "date-fns";
+import { fromUnixTime, parseISO } from "date-fns";
 import Container from "@/components/Container";
 import { convertKelvinToCelsius } from "@/utils/convertKelvinToCelsius";
 import WeatherIcon from "@/components/WeatherIcon";
@@ -158,6 +158,8 @@ if (isLoading) return (
                     <WeatherDetails visability={metersToKilometers(firstData?.visibility ?? 10000)} 
                     airPressure={`${firstData?.main.pressure}hPa`}
                     humidity={`${firstData?.main.humidity}%`}
+                    sunrine={format(fromUnixTime(data?.city.sunrise ?? 0), "H:mm")}
+                    windSpeed={}
                     />
                   </Container>
           {}
