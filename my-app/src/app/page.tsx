@@ -13,6 +13,7 @@ import WeatherIcon from "@/components/WeatherIcon";
 import { getDayOrNightIcon } from "@/utils/getDayOrNightIcon";
 import WeatherDetails from "@/components/WeatherDetails";
 import { metersToKilometers } from "@/utils/metersToKilometers";
+import { convertWindSpeed } from "@/utils/convertWindSpeed";
 
 //https://api.openweathermap.org/data/2.5/forecast?q=${place}&appid=${process.env.NEXT_PUBLIC_WEATHER_KEY}&cnt=56
 
@@ -159,7 +160,7 @@ if (isLoading) return (
                     airPressure={`${firstData?.main.pressure}hPa`}
                     humidity={`${firstData?.main.humidity}%`}
                     sunrine={format(fromUnixTime(data?.city.sunrise ?? 0), "H:mm")}
-                    windSpeed={}
+                    windSpeed={convertWindSpeed(firstData?.wind.speed ?? 1.64)}
                     />
                   </Container>
           {}
